@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, MetaData
+from sqlalchemy import create_engine, MetaData , Table
 
 
 class Crud:
@@ -6,6 +6,9 @@ class Crud:
         db = create_engine(url)
         metadata = MetaData()
         print(metadata)
+        adsets = Table('adsets', metadata, autoload=True, autoload_with=db)
+        # Print the column names
+        print(adsets.columns.keys())
 
     def add_adsets(self):
         pass
