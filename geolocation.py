@@ -1,7 +1,7 @@
 
 class Geolocation:
 
-    def __init__(self,country=None,region=None,city=None,latitude=None,longitude=None,adSetId=None,engine=None,metadata=None):
+    def __init__(self, country=None, region=None, city=None, latitude=None, longitude=None, adSetId=None, engine=None, metadata=None):
         self._country = country
         self._region = region
         self._city = city
