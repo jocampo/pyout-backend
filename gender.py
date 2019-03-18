@@ -1,6 +1,6 @@
 
 class Gender:
-    def __init__(self,name=None,gender_id=None,db=None,engine=None,metadata=None):
+    def __init__(self, name=None, gender_id=None, db=None,engine=None, metadata=None):
         self._name = name
         self._id = id
         self._engine = engine
