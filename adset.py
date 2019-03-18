@@ -1,6 +1,7 @@
+import sqlalchemy as db
 
 
-class Adsets:
+class Adset:
 
     def __init__(self, name=None, active=None, adset_id=None, engine=None,
                  metadata=None):
@@ -11,7 +12,6 @@ class Adsets:
         self._active = active
 
     def list_all_adsets(self):
-        import sqlalchemy as db
         platform = db.Table('adsets', self._metadata, autoload=True,
                           autoload_with=self._engine)
         query = db.select([platform])

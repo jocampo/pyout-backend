@@ -1,6 +1,6 @@
 import sqlalchemy as db
 from platforms import Platform
-from adset import Adsets
+from adset import Adset
 from gender import Gender
 from geolocation import Geolocation
 
@@ -9,7 +9,7 @@ class Crud:
         engine = db.create_engine(url)
         metadata = db.MetaData()
         self._platform = Platform(engine=engine, metadata=metadata)
-        self._adset = Adsets(engine=engine,metadata=metadata)
+        self._adset = Adset(engine=engine,metadata=metadata)
         self._gender = Gender(engine=engine, metadata=metadata)
         self._geolocation = Geolocation(engine=engine, metadata=metadata)
 
