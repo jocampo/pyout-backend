@@ -16,11 +16,13 @@ class Crud:
 
     def get_all_adsets(self):
         if self._adset:
-            self._adset.list_all_adsets()
+            return self._adset.list_all_adsets()
+        return []
 
     def get_all_geolocations(self):
         if self._geolocation:
-            self._geolocation.list_all_geolocations()
+            return self._geolocation.list_all_geolocations()
+        return []
 
     def get_all_genders(self):
         if self._gender:
