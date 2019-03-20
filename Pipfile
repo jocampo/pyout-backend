@@ -11,6 +11,10 @@ psycopg2 = "*"
 sqlalchemy = "*"
 flask = "*"
 connexion = "*"
+flask-jsonpify = "*"
+flask-sqlalchemy = "*"
+flask-restful = "*"
+swagger-ui-bundle = "*"
 
 [requires]
 python_version = "3.7"
