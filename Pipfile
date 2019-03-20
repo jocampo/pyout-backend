@@ -7,7 +7,6 @@ verify_ssl = true
 
 [packages]
 jsonpickle = "*"
-psycopg2 = "*"
 sqlalchemy = "*"
 flask = "*"
 connexion = "*"
@@ -15,6 +14,7 @@ flask-jsonpify = "*"
 flask-sqlalchemy = "*"
 flask-restful = "*"
 swagger-ui-bundle = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.7"
