@@ -20,3 +20,4 @@ class Adset:
         result_set = result_proxy.fetchall()
         print(result_set)
 
+

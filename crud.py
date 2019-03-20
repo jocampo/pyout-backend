@@ -34,3 +34,8 @@ class Crud:
     def get_all_platforms(self):
         if self._platform:
             self._platform.list_all_platforms()
+
+    def create_platforms(self,name):
+        if name:
+            self._platform.set_name(name)
+            self._platform.create_platform()
