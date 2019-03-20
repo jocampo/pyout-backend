@@ -1,15 +1,12 @@
-from http.server import BaseHTTPRequestHandler
-from src.api.model.Dummy import Dummy
-import jsonpickle
+from flask_restful import Resource
+from src.db.crud import Crud
+from flask_jsonpify import jsonify
 
 
-class GenderController(BaseHTTPRequestHandler):
-
-    def do_GET(self):
+class GenderController(Resource):
+    def get(self):
         """Returns all genders from the database"""
-        response_object = Dummy("Peru", "LMO", "Lima", 100, 200)
-        self.send_response(200)
-        self.send_header('Content-type', 'application/json')
-        self.end_headers()
-        self.wfile.write(jsonpickle.encode(response_object, unpicklable=False))
-        return
+        db_wrapper = Crud()
+        db_wrapper.start()
+        genders_response = db_wrapper.get_all_genders()
+        return jsonify({'genders': [dict(row) for row in genders_response]})
