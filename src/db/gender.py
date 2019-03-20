@@ -1,3 +1,5 @@
+import sqlalchemy as db
+
 
 class Gender:
     def __init__(self, name=None, gender_id=None, db=None,engine=None, metadata=None):
@@ -15,3 +17,17 @@ class Gender:
         result_proxy = connection.execute(query)
         result_set = result_proxy.fetchall()
         return result_set
+
+    def create_gender(self):
+        platform = db.Table('genders', self._metadata, autoload=True,
+                            autoload_with=self._engine)
+        query = db.insert(platform)
+        values_list = [
+            { 'name': self._name},]
+        connection = self._engine.connect()
+        result_proxy = connection.execute(query, values_list)
+        result_set = result_proxy.fetchall()
+        print(result_set)
+
+    def set_gender_name(self,gender_name):
+        self._name = gender_name

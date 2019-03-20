@@ -26,7 +26,8 @@ class Platform:
             { 'name': self._name},]
         connection = self._engine.connect()
         result_proxy = connection.execute(query, values_list)
-        print (result_proxy)
+        result_set = result_proxy.fetchall()
+        print(result_set)
 
     def set_name(self,name):
         self._name = name

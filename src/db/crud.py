@@ -41,3 +41,8 @@ class Crud:
         if name:
             self._platform.set_name(name)
             self._platform.create_platform()
+
+    def create_gender(self,name):
+        if name:
+            self._gender.set_gender_name(name)
+            self._gender.create_gender()
