@@ -1,8 +1,8 @@
 import sqlalchemy as db
-from platforms import Platform
-from adset import Adset
-from gender import Gender
-from geolocation import Geolocation
+from src.db.platforms import Platform
+from src.db.adset import Adset
+from src.db.gender import Gender
+from src.db.geolocation import Geolocation
 
 class Crud:
     def start(self, url="postgres://admin123:admin123@sqlito.csvdz1qsdaks.us-east-1.rds.amazonaws.com:5432/postgres"):
