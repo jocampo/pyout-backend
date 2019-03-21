@@ -5,7 +5,7 @@ from flask_restful import Api
 
 from src.api.controllers.gender_controller import GenderController
 from src.api.controllers.geolocations_controller import GeolocationsController
-from src.api.controllers.platform_controller import PlatformController
+from src.api.controllers.platforms_controller import PlatformController
 
 
 # Create the application instance
