@@ -10,7 +10,7 @@ class DBWrapper:
         engine = db.create_engine(url)
         metadata = db.MetaData()
         self._platform = Platform(engine=engine, metadata=metadata)
-        self._adset = Adset(engine=engine,metadata=metadata)
+        self._adset = Adset(engine=engine, metadata=metadata)
         self._gender = Gender(engine=engine, metadata=metadata)
         self._geolocation = Geolocation(engine=engine, metadata=metadata)
 
@@ -37,14 +37,15 @@ class DBWrapper:
 
     def get_all_platforms(self):
         if self._platform:
-            self._platform.list_all_platforms()
+            return self._platform.list_all_platforms()
+        return []
 
-    def create_platforms(self,name):
+    def create_platforms(self, name):
         if name:
             self._platform.set_name(name)
             self._platform.create_platform()
 
-    def create_gender(self,name):
+    def create_gender(self, name):
         if name:
             self._gender.set_gender_name(name)
             self._gender.create_gender()
