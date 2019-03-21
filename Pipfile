@@ -9,12 +9,11 @@ verify_ssl = true
 jsonpickle = "*"
 sqlalchemy = "*"
 flask = "*"
-connexion = "*"
 flask-jsonpify = "*"
 flask-sqlalchemy = "*"
 flask-restful = "*"
-swagger-ui-bundle = "*"
 psycopg2 = "*"
+flask-restful-swagger = "*"
 
 [requires]
 python_version = "3.7"
