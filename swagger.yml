@@ -1,0 +1,32 @@
+swagger: "2.0"
+info:
+  description: API docs
+  version: "1.0.0"
+  title: PyOut (Python + Knockout) Backend API
+consumes:
+  - "application/json"
+produces:
+  - "application/json"
+
+basePath: "/api"
+
+# Paths supported by the server application
+paths:
+  /genders:
+    get:
+      operationId: "genders.read"
+      tags:
+        - "Genders"
+      summary: "The gender data structure supported by the server application"
+      description: "Read the list of genders"
+      responses:
+        200:
+          description: "Successfully retrieved the gender list"
+          schema:
+            type: "array"
+            items:
+              properties:
+                id:
+                  type: "string"
+                name:
+                  type: "string"
