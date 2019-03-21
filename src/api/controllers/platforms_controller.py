@@ -3,7 +3,7 @@ from src.db.db_wrapper import DBWrapper
 from flask_jsonpify import jsonify
 
 
-class PlatformController(Resource):
+class PlatformsController(Resource):
     def get(self):
         """Returns all platforms from the database"""
         db_wrapper = DBWrapper()
