@@ -14,7 +14,7 @@ flask-jsonpify = "*"
 flask-sqlalchemy = "*"
 flask-restful = "*"
 swagger-ui-bundle = "*"
-psycopg2-binary = "*"
+psycopg2 = "*"
 
 [requires]
 python_version = "3.7"
