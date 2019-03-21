@@ -6,7 +6,7 @@ from src.db.geolocation import Geolocation
 
 
 class Crud:
-    def start(self, url="postgres://admin123:admin123@sqlito.csvdz1qsdaks.us-east-1.rds.amazonaws.com:5432/postgres"):
+    def __init__(self, url="postgres://admin123:admin123@sqlito.csvdz1qsdaks.us-east-1.rds.amazonaws.com:5432/postgres"):
         engine = db.create_engine(url)
         metadata = db.MetaData()
         self._platform = Platform(engine=engine, metadata=metadata)
