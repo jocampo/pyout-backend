@@ -5,7 +5,7 @@ from src.db.gender import Gender
 from src.db.geolocation import Geolocation
 
 
-class Crud:
+class DBWrapper:
     def __init__(self, url="postgres://admin123:admin123@sqlito.csvdz1qsdaks.us-east-1.rds.amazonaws.com:5432/postgres"):
         engine = db.create_engine(url)
         metadata = db.MetaData()
