@@ -21,5 +21,4 @@ class Geolocation:
         connection = self._engine.connect()
         result_proxy = connection.execute(query)
         result_set = result_proxy.fetchall()
-        print(result_set)
         return result_set
