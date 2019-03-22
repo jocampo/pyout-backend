@@ -18,6 +18,22 @@ class Adset:
         connection = self._engine.connect()
         result_proxy = connection.execute(query)
         result_set = result_proxy.fetchall()
+        return result_set
+
+    def list_composite_adsets(self):
+        adsets = db.Table('adsets', self._metadata, autoload=True,
+                            autoload_with=self._engine)
+
+        adsets_geolocations = db.Table('adsets_geolocations', self._metadata, autoload=True,
+                          autoload_with=self._engine)
+
+        adsets_genders = db.Table('adsets_genders', self._metadata, autoload=True,
+                          autoload_with=self._engine)
+        # join
+        query = db.select([adsets.join(adsets_geolocations).join(adsets_genders)])
+        connection = self._engine.connect()
+        result_proxy = connection.execute(query)
+        result_set = result_proxy.fetchall()
         print(result_set)
         return result_set
 
