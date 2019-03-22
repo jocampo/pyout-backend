@@ -48,4 +48,10 @@ class DBWrapper:
     def create_gender(self, name):
         if name:
             self._gender.set_gender_name(name)
-            self._gender.create_gender()
+            return self._gender.create_gender()
+
+    def create_adset(self,platform_id,gender_id, geolocation_id,name,active):
+        if gender_id and geolocation_id and platform_id:
+            self._adset.set_name(name)
+            self._adset.set_active(active)
+            self._adset.create_adset(platform_id,gender_id,geolocation_id)

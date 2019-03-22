@@ -24,8 +24,7 @@ class Gender:
         values_list = [{'name': self._name}]
         connection = self._engine.connect()
         result_proxy = connection.execute(query, values_list)
-        result_set = result_proxy.fetchall()
-        print(result_set)
+        return result_proxy
 
     def set_gender_name(self, gender_name):
         self._name = gender_name
